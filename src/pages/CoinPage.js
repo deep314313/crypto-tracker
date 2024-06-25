@@ -28,7 +28,7 @@ const CoinPage = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  if (!coin) return <Spinner animation="border" style={{ color: 'gold' }} />;
+  if (!coin) return <Spinner animation="border" style={{ color: 'blue' }} />;
 
   return (
     <Container className="mt-4">
@@ -85,3 +85,4 @@ const CoinPage = () => {
 };
 
 export default CoinPage;
+
