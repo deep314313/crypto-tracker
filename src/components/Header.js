@@ -16,23 +16,51 @@ const Header = () => {
   // Ensure "USD" is set as default currency on component mount
   React.useEffect(() => {
     setCurrency("USD");
-  });
+  }, [setCurrency]);
 
   return (
     <Navbar bg="dark" variant="dark" expand="lg">
       <Container>
-        <Navbar.Brand onClick={() => navigate("/")} style={{ color: "gold", fontFamily: "Montserrat", fontWeight: "bold", cursor: "pointer" }}>
-          Crypto Hunter
+        <Navbar.Brand
+          onClick={() => navigate("/")}
+          style={{
+            color: "#03a9fc",
+            fontFamily: "Montserrat",
+            fontWeight: "bold",
+            cursor: "pointer",
+            fontSize: "4rem",
+            transition: "transform 0.2s",
+            marginTop: "15px"
+          }}
+          onMouseEnter={(e) => {
+            e.target.style.transform = "scale(1.1)";
+          }}
+          onMouseLeave={(e) => {
+            e.target.style.transform = "scale(1)";
+          }}
+        >
+          Crypto Tracker
         </Navbar.Brand>
 
-        <div className="flex">
+        <div className="ml-auto">
           {/* Single Dropdown for currency selection */}
-          <Dropdown >
-            <Dropdown.Toggle variant="warning" id="currencyDropdown" style={{ color: 'black', marginTop: '8px', float: 'right'}} >
+          <Dropdown>
+            <Dropdown.Toggle
+              variant="basic"
+              id="currencyDropdown"
+              style={{
+                color: 'black',
+                marginTop: '8px',
+                backgroundColor: '#03a9fc',
+                borderColor: '#FFD700',
+                float: 'right',
+                
+              }}
+            >
               {currency}
             </Dropdown.Toggle>
 
-            <Dropdown.Menu style={{float:'Right' , marginTop: '8px'}}>
+            <Dropdown.Menu style={{ marginTop: '40px', marginLeft: '86%' }}>
               <Dropdown.Item onClick={() => handleCurrencyChange("USD")}>
                 USD
               </Dropdown.Item>
@@ -49,3 +77,4 @@ const Header = () => {
 };
 
 export default Header;
+
