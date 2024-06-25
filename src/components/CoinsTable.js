@@ -58,7 +58,7 @@ const CoinsTable = () => {
         Cryptocurrency Prices by Market Cap
       </h4>
 <div className="mb-3 d-flex justify-content-center">
-      <InputGroup style={{ width: '80%', marginLeft: '58px',marginTop: '20px',marginBottom: '20px'}}>
+      <InputGroup style={{ width: '80%', marginLeft: '74px',marginTop: '20px',marginBottom: '20px'}}>
         <FormControl
           style={{ fontSize: "1.5rem", textAlign: "center", height: '50px' }}
           placeholder="Search For a Crypto Currency.."
@@ -70,7 +70,7 @@ const CoinsTable = () => {
         {loading && <ProgressBar now={100} variant="warning" />}
         {!loading && (
           <Table striped bordered hover variant="dark">
-            <thead style={{ backgroundColor: "#EEBC1D" }}>
+            <thead style={{ backgroundColor: "#03a9fc" }}>
               <tr>
                 {["Coin", "Price", "24h Change", "Market Cap"].map((head) => (
                   <th
@@ -163,3 +163,4 @@ const CoinsTable = () => {
 };
 
 export default CoinsTable;
+
